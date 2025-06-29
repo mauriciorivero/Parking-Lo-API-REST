@@ -53,4 +53,15 @@ router.delete('/:id', async (req, res) => {
   }
 });
 
+// Buscar usuario por número de documento
+router.get('/documento/:numero_documento', async (req, res) => {
+  try {
+    const usuario = await Usuario.getByNumeroDocumento(req.params.numero_documento);
+    if (usuario) res.json(usuario);
+    else res.status(404).json({ error: 'Usuario no encontrado' });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+});
+
 module.exports = router;

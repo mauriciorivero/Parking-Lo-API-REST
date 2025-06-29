@@ -62,6 +62,13 @@ class Usuario {
     return rows[0];
   }
 
+  static async getByNumeroDocumento(numero_documento) {
+    const database = new db();
+    const [rows] = await database.connection.promise().query('SELECT * FROM USUARIO WHERE numero_documento = ?', [numero_documento]);
+    database.end();
+    return rows[0];
+  }
+
   static async create(usuario) {
     const database = new db();
     const [result] = await database.connection.promise().query(
