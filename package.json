@@ -1,0 +1,22 @@
+{
+  "name": "parking-lot-api-rest",
+  "version": "1.0.0",
+  "description": "API REST básica para Parking Lot usando Node.js y Express.js",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "api",
+    "rest",
+    "express",
+    "nodejs",
+    "parking-lot"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.14.1"
+  }
+}
